@@ -1,27 +1,20 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'node18'
+    triggers {
+        githubPush()
     }
 
     stages {
-        stage('Check Node') {
+        stage('Checkout') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
-            }
-        }
-
-        stage('Install') {
-            steps {
-                sh 'npm install'
+                checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                echo "Auto build triggered from GitHub push"
             }
         }
     }
