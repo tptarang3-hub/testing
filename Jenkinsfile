@@ -14,7 +14,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo "Auto build triggered from GitHub push"
+                echo "🚀 Auto build triggered from GitHub push"
+                echo "⏰ Build time: ${new Date()}"
             }
         }
     }
