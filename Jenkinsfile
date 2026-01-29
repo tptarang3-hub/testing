@@ -14,17 +14,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo "Building application..."
-                // example:
-                // npm install
-                // mvn clean package
-                // docker build -t myapp .
-            }
-        }
-
-        stage('Run / Test') {
-            steps {
-                echo "Running application or tests..."
+                echo "Auto build triggered from GitHub push"
             }
         }
     }
